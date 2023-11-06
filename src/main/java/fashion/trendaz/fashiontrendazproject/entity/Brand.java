@@ -7,33 +7,45 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
-public class User {
+@Table(name="brand")
+public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
+	private Integer brandId;
+	private String name;
 	private String username;
 	private String email;
+	private String phone;
 	private String password;
 	
-	public User() {
+	public Brand() {
 		super();
 	}
 
-	public User(Integer userId, String username, String email, String password) {
+	public Brand(Integer brandId, String name, String username, String email, String phone, String password) {
 		super();
-		this.userId = userId;
+		this.brandId = brandId;
+		this.name = name;
 		this.username = username;
 		this.email = email;
+		this.phone = phone;
 		this.password = password;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public Integer getBrandId() {
+		return brandId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setBrandId(Integer brandId) {
+		this.brandId = brandId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUsername() {
@@ -52,6 +64,14 @@ public class User {
 		this.email = email;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -62,12 +82,16 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", email=" + email + ", password=" + password
-				+ "]";
+		return "Brand [brandId=" + brandId + ", name=" + name + ", username=" + username + ", email=" + email
+				+ ", phone=" + phone + ", password=" + password + "]";
+	}
+
+	public boolean isPresent() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
-	
-
 
 	
+
 }
