@@ -14,10 +14,11 @@ public interface UserService {
 
 	List<User> findAll();
 
-	String addUsers(UserDTO userDTO);
-
-	String addUser(UserDTO userDTO);
 
 	LoginResponse loginUser1(LoginDTO loginDTO);
+
+	String addUsers(UserDTO userDTO);
+
+
 
 }

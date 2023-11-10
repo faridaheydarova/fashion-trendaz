@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fashion.trendaz.fashiontrendazproject.dto.LoginDTO;
 import fashion.trendaz.fashiontrendazproject.dto.UserDTO;
+import fashion.trendaz.fashiontrendazproject.entity.Authority;
 import fashion.trendaz.fashiontrendazproject.entity.User;
+import fashion.trendaz.fashiontrendazproject.repository.AuthorityRepository;
 import fashion.trendaz.fashiontrendazproject.repository.UserRepository;
 import fashion.trendaz.fashiontrendazproject.response.LoginResponse;
 import fashion.trendaz.fashiontrendazproject.service.UserService;
@@ -40,14 +43,14 @@ import fashion.trendaz.fashiontrendazproject.service.UserService;
 		@PreAuthorize("hasRole('ADMIN')")
 		@PostMapping(path = "/save")
 		public String saveUser(@RequestBody UserDTO userDTO, HttpServletRequest request){ 
-			String id = userService.addUser(userDTO);
+			String username = userService.addUsers(userDTO);
 			
 			Authority authority = new Authority();
 			authority.setUsername(userDTO.getUsername());
 			authority.setAuthority("ADMIN");
 			authorityRepo.save(authority);
 			
-			return id;
+			return username ;
 	}
 		
 
