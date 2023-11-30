@@ -31,6 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/v2/api-docs", "/swagger-ui.html", "/swagger-resources/**", "/webjars/**").permitAll()
 		.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+		.antMatchers(HttpMethod.OPTIONS, "/fashion-trendaz-project-0.0.1-SNAPSHOT/hello").permitAll()
 		.antMatchers(HttpMethod.GET, "/").permitAll()
 		.antMatchers(HttpMethod.POST, "/users/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/users").permitAll()
@@ -38,6 +39,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/products").permitAll()
 		.antMatchers(HttpMethod.POST, "/orders/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/orders").permitAll()
+		.antMatchers(HttpMethod.POST, "/customers/**").permitAll()
+		.antMatchers(HttpMethod.GET, "/customers").permitAll()
 		.antMatchers(HttpMethod.GET, "/files/download/**").permitAll()
 		
 		.anyRequest().authenticated().and().httpBasic(); 

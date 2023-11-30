@@ -12,6 +12,7 @@
 	<artifactId>fashion-trendaz-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>fashion-trendaz-project</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -42,53 +43,72 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>
+				spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
+			<groupId>
+				com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.mysql</groupId>
+			<groupId>
+				com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
+			<groupId>
+				org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
+			<groupId>
+				org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>
+				test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
+			<artifactId>
+				spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-<groupId>io.springfox</groupId>
+<groupId>
+				io.springfox</groupId>
 <artifactId>springfox-swagger2</artifactId>
-<version>${springfox-swagger.version}</version>
-</dependency>
+<version>
+				${springfox-swagger.version}</version>
+		</dependency>
 		
 
 <dependency>
-<groupId>io.springfox</groupId>
+<groupId>
+				io.springfox</groupId>
 <artifactId>springfox-swagger-ui</artifactId>
-<version>${springfox-swagger.version}</version>
-</dependency>
+<version>
+				${springfox-swagger.version}</version>
+		</dependency>
 
 <dependency>
-<groupId>io.springfox</groupId>
+<groupId>
+				io.springfox</groupId>
 <artifactId>springfox-bean-validators</artifactId>
-<version>${springfox-swagger.version}</version>
-</dependency>
+<version>
+				${springfox-swagger.version}</version>
+		</dependency>
 	
 	</dependencies>
 
