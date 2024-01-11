@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
  
@@ -19,6 +21,9 @@ public class Basket {
 	@OneToOne
 	@JoinColumn(name = "product_id")
 	private Products product;
+	@ManyToOne
+    @JoinColumn(name = "order_id")
+    private Orders order;
 	public Integer getId() {
 		return id;
 	}
@@ -37,9 +42,15 @@ public class Basket {
 	public void setProduct(Products product) {
 		this.product = product;
 	}
+	public Orders getOrder() {
+		return order;
+	}
+	public void setOrder(Orders order) {
+		this.order = order;
+	}
 	@Override
 	public String toString() {
-		return "Basket [id=" + id + ", count=" + count + ", product=" + product + "]";
+		return "Basket [id=" + id + ", count=" + count + ", product=" + product + ", order=" + order + "]";
 	}
 	
 	

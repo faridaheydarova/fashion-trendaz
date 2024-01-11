@@ -1,9 +1,14 @@
 package fashion.trendaz.fashiontrendazproject.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +20,10 @@ public class Authority {
 	private String username;
 	private String authority;
 	
+	//@ManyToMany(mappedBy = "authority")
+    //private Set<User> users;
+	@OneToMany(mappedBy = "authority", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<User> users;
 	public Authority() {
 		super();
 	}

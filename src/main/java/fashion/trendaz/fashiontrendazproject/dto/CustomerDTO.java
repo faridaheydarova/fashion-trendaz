@@ -6,9 +6,6 @@ import javax.persistence.Id;
 
 public class CustomerDTO {
 
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer customerId;
 	private String name;
 	private String address;
